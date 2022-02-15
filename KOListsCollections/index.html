@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head></head>
+    <body>
+        <button data-bind="click: addSeat">Reserve another seat</button>
+
+        <table>
+            <thead><tr>
+                <th>Passenger name</th><th>Meal</th><th>Surcharge</th>
+            </tr></thead>
+
+            <tbody data-bind="foreach: seats">
+                <tr>
+                    <td><input data-bind="value: name" /></td>
+                    <td><select data-bind="options: $root.availableMeals, value: meal, optionsText:'mealName'"></select></td>
+                    <td data-bind="text: formattedPrice"></td>
+                </tr>
+            </tbody>
+            
+        </table>
+        <script type="text/javascript" src="knockout-3.5.1.js"></script>
+        <script type="text/javascript" src="ViewModel.js" ></script>
+
+    </body>
+</html>
